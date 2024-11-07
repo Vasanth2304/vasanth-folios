@@ -1,0 +1,23 @@
+.card {
+    transition: transform 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.15);
+  }
+  
+  #experience img,
+  #tools img {
+    width: 75px; /* Adjust width as needed */
+    height: 75px;
+  }
+  
+  #work-experience .card {
+    border-radius: 1rem;
+    transition: transform 0.3s ease;
+  }
+  
+  #work-experience .card:hover {
+    transform: scale(1.03);
+  }
+  

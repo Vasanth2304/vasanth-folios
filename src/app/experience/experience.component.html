@@ -1,0 +1,83 @@
+<section id="work-experience" class="text-center py-5">
+    <p class="fw-bold mb-2">Professional</p>
+    <h1 class="title mb-4">Experience</h1>
+  
+    <div class="card mx-auto p-4 shadow col-sm-6">
+      <h5 class="card-title mb-1">Junior Software Engineer</h5>
+      <p class="text-muted mb-2">
+        07/2022 - Present | CI Global Solutions, Chennai, Tamilnadu
+      </p>
+  
+      <ul class="list-unstyled text-start">
+        <li>
+          <i class="bi bi-chevron-right me-2"></i>
+          Developed dynamic web applications using Angular and Kendo UI, improving
+          operational efficiency.
+        </li>
+        <li>
+          <i class="bi bi-chevron-right me-2"></i>
+          Worked on Yellowstone app with Reservation, Activity tracking, and Asset
+          Management modules.
+        </li>
+        <li>
+          <i class="bi bi-chevron-right me-2"></i>
+          Enhanced UI/UX for Employee Scheduling and Time-Off Request modules,
+          boosting user satisfaction by 15%.
+        </li>
+        <li>
+          <i class="bi bi-chevron-right me-2"></i>
+          Collaborated in an agile team to ensure timely completion and high code
+          quality.
+        </li>
+      </ul>
+    </div>
+  </section>
+  
+  <section id="experience" class="text-center py-5">
+    <p class="fw-bold mb-2">Explore My</p>
+    <h1 class="title mb-4">Experience</h1>
+  
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+      <div
+        *ngFor="let skill of skills"
+        class="card text-center p-3"
+        style="width: 12rem"
+      >
+        <img
+          [src]="skill.icon"
+          [alt]="skill.name + ' icon'"
+          class="card-img-top mb-3 mx-auto"
+          style="width: 100px; height: 100px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ skill.name }}</h5>
+          <p class="card-text">{{ skill.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="tools" class="text-center py-5">
+    <p class="fw-bold mb-2">Tools I Use</p>
+    <h1 class="title mb-4">Development Tools</h1>
+  
+    <div class="d-flex flex-wrap justify-content-center gap-4">
+      <div
+        *ngFor="let tool of tools"
+        class="card text-center p-3"
+        style="width: 12rem"
+      >
+        <img
+          [src]="tool.icon"
+          [alt]="tool.name + ' icon'"
+          class="card-img-top mb-3 mx-auto"
+          style="width: 75px; height: 75px"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ tool.name }}</h5>
+          <p class="card-text">{{ tool.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
