@@ -5,6 +5,10 @@
   .card:hover {
     transform: scale(1.15);
   }
+
+  .card-title{
+    font: 400 1.23rem / 2.25rem Roboto, sans-serif !important;
+  }
   
   #experience img,
   #tools img {

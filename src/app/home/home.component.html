@@ -1,5 +1,5 @@
 <div id="home">
-  <!-- Content for home -->
+  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Vasanth's Folio</a>
@@ -15,7 +15,7 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div
-        class="collapse navbar-collapse d-flex justify-content-end"
+        class="collapse navbar-collapse justify-content-end"
         id="navbarNavDropdown"
       >
         <ul class="navbar-nav">
@@ -48,7 +48,6 @@
               <li><a class="dropdown-item" href="#">French</a></li>
             </ul>
           </li>
-          <!-- Add Font Awesome icons for GitHub and Instagram -->
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-github"></i></a>
           </li>
@@ -60,13 +59,13 @@
     </div>
   </nav>
 
-  <div
-    class="center-wrapper d-flex align-items-center justify-content-center vh-100"
-  >
+  <!-- Home Section -->
+  <div class="center-wrapper d-flex align-items-center justify-content-center">
     <section
       id="profile"
-      class="d-flex flex-row align-items-center justify-content-center gap-5"
+      class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-center gap-5 text-center"
     >
+      <!-- Profile Picture -->
       <div
         class="section__pic-container d-flex align-items-center justify-content-center"
       >
@@ -77,12 +76,14 @@
         />
       </div>
 
-      <div class="section__text text-center">
+      <!-- Profile Text -->
+      <div class="section__text">
         <p class="fw-bold mb-2">Hello, I'm</p>
         <h1 class="title">Vasanth Ganesan</h1>
         <p class="section__text__p2">Frontend Developer</p>
 
-        <div class="btn-container d-flex justify-content-center gap-2 my-3">
+        <!-- Buttons -->
+        <div class="btn-container d-flex justify-content-center gap-2 my-3 flex-wrap">
           <button class="btn btn-outline-dark" (click)="openResume()">
             Download CV
           </button>
@@ -91,7 +92,8 @@
           </button>
         </div>
 
-        <div class="socials-container d-flex justify-content-center gap-2">
+        <!-- Social Icons -->
+        <div class="socials-container d-flex justify-content-center gap-2 flex-wrap">
           <img
             src="./assets/linkedin.png"
             alt="My LinkedIn profile"
