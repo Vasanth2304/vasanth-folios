@@ -6,10 +6,15 @@ import { ExperienceComponent } from './experience/experience.component';
 import { ProjectsComponent } from './projects/projects.component';
 
 export const routes: Routes = [
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
-    { path: 'home', component: HomeComponent },
-    { path: 'about', component: AboutComponent },
-    { path: 'projects', component: ProjectsComponent },
-    { path: 'contact', component: ContactComponent },  
-    { path: 'experience', component: ExperienceComponent },  
-];
+    { path: '', component: HomeComponent },
+    { path: '**', redirectTo: '' } // Redirect any unknown paths to Home
+  ];
+
+// export const routes: Routes = [
+//     { path: '', redirectTo: '/home', pathMatch: 'full' },
+//     { path: 'home', component: HomeComponent },
+//     { path: 'about', component: AboutComponent },
+//     { path: 'projects', component: ProjectsComponent },
+//     { path: 'contact', component: ContactComponent },  
+//     { path: 'experience', component: ExperienceComponent },  
+// ];

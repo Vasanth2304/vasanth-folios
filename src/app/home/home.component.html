@@ -1,25 +1,45 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div id="home">
+  <!-- Content for home -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Vasanth's Folio</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNavDropdown">
+      <div
+        class="collapse navbar-collapse d-flex justify-content-end"
+        id="navbarNavDropdown"
+      >
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="home">Home</a>
+            <a class="nav-link active" aria-current="page" href="#home">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about">About Me</a>
+            <a class="nav-link" href="#about">About Me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="experience">Experience</a>
+            <a class="nav-link" href="#experience">Experience</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact">Contact Me</a>
+            <a class="nav-link" href="#contact">Contact Me</a>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
               Language
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -31,35 +51,46 @@
           <!-- Add Font Awesome icons for GitHub and Instagram -->
           <li class="nav-item">
             <a class="nav-link" href="#"><i class="bi bi-github"></i></a>
-        </li>
-        <li class="nav-item">
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#"><i class="fab fa-instagram"></i></a>
-        </li>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="center-wrapper d-flex align-items-center justify-content-center vh-100">
-    <section id="profile" class="d-flex flex-row align-items-center justify-content-center gap-5">
-      <div class="section__pic-container d-flex align-items-center justify-content-center">
+  <div
+    class="center-wrapper d-flex align-items-center justify-content-center vh-100"
+  >
+    <section
+      id="profile"
+      class="d-flex flex-row align-items-center justify-content-center gap-5"
+    >
+      <div
+        class="section__pic-container d-flex align-items-center justify-content-center"
+      >
         <img
           src="./assets/VasanthImage.jpg"
           alt="Vasanth profile picture"
           class="img-fluid rounded-circle profile-pic"
         />
       </div>
-  
+
       <div class="section__text text-center">
         <p class="fw-bold mb-2">Hello, I'm</p>
         <h1 class="title">Vasanth Ganesan</h1>
         <p class="section__text__p2">Frontend Developer</p>
-  
+
         <div class="btn-container d-flex justify-content-center gap-2 my-3">
-          <button class="btn btn-outline-dark" (click)="openResume()">Download CV</button>
-          <button class="btn btn-dark" routerLink="/contact">Contact Info</button>
+          <button class="btn btn-outline-dark" (click)="openResume()">
+            Download CV
+          </button>
+          <button class="btn btn-dark" routerLink="/contact">
+            Contact Info
+          </button>
         </div>
-  
+
         <div class="socials-container d-flex justify-content-center gap-2">
           <img
             src="./assets/linkedin.png"
@@ -77,5 +108,24 @@
       </div>
     </section>
   </div>
+</div>
+
+<div id="about">
   <app-about></app-about>
+  <!-- Content for about -->
+</div>
+
+<div id="experience">
   <app-experience></app-experience>
+  <!-- Content for experience -->
+</div>
+
+<div id="projects">
+  <app-projects></app-projects>
+  <!-- Content for projects -->
+</div>
+
+<div id="contact">
+  <app-contact></app-contact>
+  <!-- Content for contact -->
+</div>

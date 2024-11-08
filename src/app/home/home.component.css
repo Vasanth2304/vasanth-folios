@@ -1,0 +1,35 @@
+#profile {
+    gap: 5rem;
+  }
+  .center-wrapper {
+    height: 100vh;
+  }
+  .section__pic-container {
+    width: 500px;
+    height: 500px;
+    overflow: hidden; /* Ensures no content spills out of the circle */
+  }
+  
+  .profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Scales the image proportionally */
+    border-radius: 50%;
+    object-position: center 0%;  /* Forces circular shape */
+  }
+  
+  
+  .title {
+    font-size: 3rem;
+  }
+  
+  .icon {
+    cursor: pointer;
+    height: 2rem;
+  }
+  
+  .btn {
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
