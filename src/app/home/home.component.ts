@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer2 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
@@ -16,9 +16,24 @@ export class HomeComponent {
 
   private lastScrollY: number = 0; // Declare lastScrollY to track the last scroll position
 
+  constructor(private renderer: Renderer2) {}
   
   ngOnInit(): void {
     window.addEventListener('scroll', this.onScroll.bind(this));
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navbarCollapse = document.getElementById('navbarNavDropdown');
+
+    navLinks.forEach(link => {
+      this.renderer.listen(link, 'click', () => {
+        // Check if the navbar is expanded (visible in mobile view)
+        const isExpanded = navbarCollapse?.classList.contains('show');
+        if (isExpanded) {
+          // Collapse the navbar using Bootstrap's Collapse API
+          const collapse = new (window as any).bootstrap.Collapse(navbarCollapse);
+          collapse.toggle();
+        }
+      });
+    });
   }
 
   openResume() {
