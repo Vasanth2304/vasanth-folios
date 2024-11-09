@@ -23,8 +23,50 @@
 .icon {
   cursor: pointer;
   height: 2rem;
+  transition: transform 0.2s;
+}
+.icon:hover {
+  transform: scale(1.1);
 }
 .btn {
   font-weight: 600;
   transition: all 0.3s ease;
+}
+/* Add some padding to the body to prevent content overlap with the fixed navbar */
+body {
+  padding-top: 4rem;
+}
+
+/* Styling for the navbar links */
+.nav-link {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.typewriter {
+  display: inline-block;
+  border-right: 2px solid #333;
+  padding-right: 5px;
+  animation: blinkCursor 0.8s infinite;
+}
+
+@keyframes blinkCursor {
+  0%, 100% {
+    border-color: #333;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
 }

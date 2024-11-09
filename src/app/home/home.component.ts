@@ -15,10 +15,23 @@ import { ContactComponent } from "../contact/contact.component";
 export class HomeComponent {
 
   private lastScrollY: number = 0; // Declare lastScrollY to track the last scroll position
+  phrases: string[] = [
+    'Web Application Developer',
+    'Frontend Developer',
+    'Angular Developer',
+  ];
+  displayedText: string = '';
+  phraseIndex: number = 0;
+  charIndex: number = 0;
+  isDeleting: boolean = false;
+  typingSpeed: number = 150;
+  deletingSpeed: number = 100;
+  pauseDuration: number = 2000;
 
   constructor(private renderer: Renderer2) {}
   
   ngOnInit(): void {
+    this.typeEffect();
     window.addEventListener('scroll', this.onScroll.bind(this));
     const navLinks = document.querySelectorAll('.nav-link');
     const navbarCollapse = document.getElementById('navbarNavDropdown');
@@ -94,6 +107,32 @@ export class HomeComponent {
   
   private navigateToPreviousSection(sections: NodeListOf<Element>): void {
     // Logic to move to the previous section
+  }
+
+  typeEffect(): void {
+    const currentPhrase = this.phrases[this.phraseIndex];
+
+    // Update displayed text based on typing or deleting state
+    this.displayedText = this.isDeleting
+      ? currentPhrase.slice(0, this.charIndex--)
+      : currentPhrase.slice(0, this.charIndex++);
+
+    // Check if we finished typing the current phrase
+    if (!this.isDeleting && this.charIndex === currentPhrase.length) {
+      // Start deleting after a pause
+      setTimeout(() => (this.isDeleting = true), this.pauseDuration);
+    }
+
+    // Check if we finished deleting the current phrase
+    if (this.isDeleting && this.charIndex === 0) {
+      // Move to the next phrase and reset
+      this.isDeleting = false;
+      this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
+    }
+
+    // Recursively call typeEffect with a delay
+    const delay = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
+    setTimeout(() => this.typeEffect(), delay);
   }
   
 }

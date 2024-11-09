@@ -78,7 +78,10 @@
       <div class="section__text">
         <p class="fw-bold mb-2">Hello, I'm</p>
         <h1 class="title">Vasanth Ganesan</h1>
-        <p class="section__text__p2">Frontend Developer</p>
+        <p class="section__text__p2">
+          <span class="typewriter">{{ displayedText  }}</span>
+        </p>        
+        <!-- <p class="section__text__p2">Frontend Developer</p> -->
 
         <!-- Buttons -->
         <div class="btn-container d-flex justify-content-center gap-2 my-3 flex-wrap">
@@ -91,19 +94,31 @@
         </div>
 
         <!-- Social Icons -->
-        <div class="socials-container d-flex justify-content-center gap-2 flex-wrap">
+        <div class="socials-container d-flex justify-content-center gap-2 flex-wrap"> 
           <img
-            src="./assets/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            (click)="goToLink('https://linkedin.com')"
-          />
-          <img
-            src="./assets/github.png"
+            src="./assets/icons/github-logo.png"
             alt="My Github profile"
             class="icon"
-            (click)="goToLink('https://github.com')"
+            (click)="goToLink('https://github.com/Vasanth2304')"
           />
+          <img
+            src="./assets/icons/linkedin.png"
+            alt="My LinkedIn profile"
+            class="icon"
+            (click)="goToLink('https://www.linkedin.com/in/vasanth-g-370517222/')"
+          />
+          <img
+          src="./assets/icons/instagram.png"
+          alt="My Instagram profile"
+          class="icon"
+          (click)="goToLink('https://www.instagram.com/vasanthvolley_/')"
+        />
+        <img
+          src="./assets/icons/twitter.png"
+          alt="My Twitter profile"
+          class="icon"
+          (click)="goToLink('https://twitter.com')"
+        />
         </div>
       </div>
     </section>
