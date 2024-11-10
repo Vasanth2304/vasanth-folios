@@ -1,24 +1,26 @@
-/* #about .about-pic {
-    border-radius: 2rem;
+  /* #about .details-container {
+    min-height: 150px;
+    border-radius: 10px;
   }
   
-  #about .arrow {
-    right: -2rem;
-    bottom: 2rem;
-    cursor: pointer;
-    width: 2rem;
+  #about .icon {
+    width: 50px;
+    height: 50px;
   }
-  
-  .details-container {
-    border: 1px solid #a3a3a3;
-    border-radius: 1rem;
-  }
-  .icon {
-    cursor: pointer;
-    height: 2rem;
-  } */
+   */
 
+   #about {
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  #about .title {
+    color: var(--primary-color);
+  }
+  
   #about .details-container {
+    background-color: var(--primary-80)!important;
+    color: var(--text-color);
     min-height: 150px;
     border-radius: 10px;
   }
@@ -28,5 +30,15 @@
     height: 50px;
   }
   
+  #about .text-container p {
+    color: var(--text-color);
+  }
+
+  h3 {
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    color: var(--accent-color);
+    word-break: break-word;
+    margin-bottom: 0.5rem;
+  }
   
   

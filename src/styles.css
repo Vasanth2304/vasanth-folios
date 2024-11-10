@@ -2,7 +2,236 @@
 /* @import 'variables'; */
 /* html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; */
 html {
     scroll-behavior: smooth;
   }
+
+/* :root {
+  --primary-color: #3F72AF;
+  --secondary-color: #DBE2EF;
+  --background-color: #F9F7F7;
+  --text-color: #112D4E;
+} */
+
+:root {
+  /* Base Colors */
+  --primary-color: #00AAB3;
+  --secondary-color: #8E9BAF;
+  --accent-color: #F0885C;
+  --background-color: #393E46;
+  --text-color: #EDEDED;
+
+  /* Primary Color Shades */
+  --primary-5: #E0F6F7;    /* 5% Light */
+  --primary-10: #C2EEF0;   /* 10% */
+  --primary-20: #85DDE1;   /* 20% */
+  --primary-30: #51CCD0;   /* 30% */
+  --primary-40: #1DBBBF;   /* 40% */
+  --primary-50: #00AAB3;   /* 50% (Original) */
+  --primary-60: #00989F;   /* 60% */
+  --primary-70: #00848A;   /* 70% */
+  --primary-80: #006E75;   /* 80% */
+  --primary-90: #005A61;   /* 90% */
+  --primary-100: #00444C;  /* 100% Dark */
+
+  /* Secondary Color Shades */
+  --secondary-5: #F3F5F7;  /* 5% Light */
+  --secondary-10: #E4E8EF; /* 10% */
+  --secondary-20: #C9D1DF; /* 20% */
+  --secondary-30: #B0BACC; /* 30% */
+  --secondary-40: #99A6BB; /* 40% */
+  --secondary-50: #8E9BAF; /* 50% (Original) */
+  --secondary-60: #79849A; /* 60% */
+  --secondary-70: #647085; /* 70% */
+  --secondary-80: #505B6F; /* 80% */
+  --secondary-90: #3B4558; /* 90% */
+  --secondary-100: #2A3342;/* 100% Dark */
+
+  /* Accent Color Shades */
+  --accent-5: #FFEAE5;     /* 5% Light */
+  --accent-10: #FFD5CC;    /* 10% */
+  --accent-20: #FFB199;    /* 20% */
+  --accent-30: #FF8F75;    /* 30% */
+  --accent-40: #FF755C;    /* 40% */
+  --accent-50: #F0885C;    /* 50% (Original) */
+  --accent-60: #D6724E;    /* 60% */
+  --accent-70: #B4563E;    /* 70% */
+  --accent-80: #94402F;    /* 80% */
+  --accent-90: #7A2F23;    /* 90% */
+  --accent-100: #5F1F17;   /* 100% Dark */
+}
+
+
+/* :root {
+  --primary-color: #A6E3E9;    
+  --secondary-color: #CBF1F5;    
+  --background-color: #E3FDFD;
+  --text-color: #142850;          
+} */
+
+/* Font Family Variables */
+:root {
+  --font-family-primary: 'Poppins', sans-serif;
+  --font-family-secondary: 'Roboto', sans-serif;
+
+  /* Font Size Variables */
+  --font-size-small: 0.875rem; /* 14px */
+  --font-size-regular: 1rem; /* 16px */
+  --font-size-medium: 1.125rem; /* 18px */
+  --font-size-large: 1.5rem; /* 24px */
+  --font-size-title: 2.5rem; /* 40px */
+  --font-size-subtitle: 1.75rem; /* 28px */
+
+  /* Font Weight Variables */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+/* Example Usage */
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+}
+
+/* styles.css (Angular Material Theme Update) */
+.mat-primary {
+  background-color: var(--primary-color);
+}
+
+.mat-accent {
+  background-color: var(--secondary-color);
+}
+
+.mat-warn {
+  color: var(--text-color);
+}
+
+/* Default Typography */
+body {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-regular);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Headings */
+h1, .title {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-title);
+  font-weight: var(--font-weight-bold);
+  color: var(--primary-color);
+}
+
+h2 {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-subtitle);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-color);
+}
+
+h3 {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+}
+
+/* Paragraphs and Text */
+p {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-regular);
+  color: var(--text-color);
+}
+
+.small-text {
+  font-size: var(--font-size-small);
+}
+
+.medium-text {
+  font-size: var(--font-size-medium);
+}
+
+/* Button Text */
+.btn {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Links */
+a {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-regular);
+  font-weight: var(--font-weight-medium);
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--text-color);
+}
+
+/* Input Fields */
+input, textarea {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-regular);
+}
+
+/* Typewriter Effect */
+.typewriter {
+  font-family: var(--font-family-primary);
+  font-size: var(--font-size-large);
+}
+
+/* fc-primary{
+  color: var(--accent-color) !important;
+}
+fc-secondary{
+  color: var(--accent-color)!important;
+}
+fc-accent{
+  color: var(--accent-color)!important;
+}
+fc-background{
+  color: var(--background-color)!important;
+}
+fc-text{
+  color: var(--text-color)!important;
+} */
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+  :root {
+    --font-size-title: 2rem;
+    --font-size-subtitle: 1.5rem;
+    --font-size-large: 1.25rem;
+    --font-size-medium: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --font-size-title: 1.75rem;
+    --font-size-subtitle: 1.25rem;
+    --font-size-large: 1rem;
+    --font-size-medium: 0.875rem;
+    --font-size-regular: 0.875rem;
+  }
+}
+
+
   

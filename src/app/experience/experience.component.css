@@ -1,27 +1,77 @@
-.card {
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.15);
-  }
 
-  .card-title{
-    font: 400 1.23rem / 2.25rem Roboto, sans-serif !important;
-  }
-  
-  #experience img,
-  #tools img {
-    width: 75px; /* Adjust width as needed */
-    height: 75px;
-  }
-  
-  #work-experience .card {
-    border-radius: 1rem;
-    transition: transform 0.3s ease;
-  }
-  
-  #work-experience .card:hover {
-    transform: scale(1.03);
-  }
-  
+/* Section Styling */
+#work-experience, #experience, #tools {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+/* Card Styling */
+.card {
+  transition: transform 0.3s ease;
+  border-radius: 1rem;
+  background-color: var(--primary-80);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for cards */
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Titles and Text */
+#work-experience .card-title,
+#experience .card-title,
+#tools .card-title {
+  font-family: var(--font-family-secondary);
+  font-size: var(--font-size-large);
+  color: var(--accent-color);
+}
+
+/* Card Text */
+#work-experience .card-text,
+#experience .card-text,
+#tools .card-text {
+  font-size: var(--font-size-medium);
+  color: var(--text-color);
+}
+
+/* Specific styles for Work Experience */
+#work-experience .card {
+  border: 1px solid var(--primary-color);
+}
+
+/* Experience Section */
+#experience {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#experience .card-body {
+  background-color: var(--primary-80);
+  color: var(--text-color);
+}
+
+/* Tools Section */
+#tools {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#tools .card-body {
+  background-color: var(--primary-80);
+  color: var(--text-color);
+}
+
+/* Card image styling */
+#experience img,
+#tools img {
+  width: 75px;
+  height: 75px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.fc-text{
+  color: var(--text-color)!important;
+} 
+

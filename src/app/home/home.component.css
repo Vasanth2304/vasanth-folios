@@ -1,66 +1,136 @@
-#profile {
-  gap: 2rem;
+/* Home Section Styles */
+#home {
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
+/* #home {
+  background: url('./assets/background.jpg') no-repeat center center/cover;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+} */
+
+.navbar {
+  background-color: var(--primary-color);
+  color: var(--text-color);
+}
+
+.navbar-brand {
+  color: var(--background-color);
+}
+
+.nav-link {
+  color: var(--background-color);
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--background-color);
+}
+
+.navbar-toggler {
+  border-color: var(--text-color);
+}
+
+.navbar-toggler-icon {
+  filter: invert(100%);
+}
+
+/* .navbar {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.navbar-brand {
+  color: var(--text-color);
+}
+
+.nav-link {
+  color: var(--text-color);
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--primary-color);
+} */
+
 .center-wrapper {
+  /* background-color: var(--background-color); */
   min-height: 100vh;
   padding: 1rem;
 }
+
 .section__pic-container {
   width: 300px;
   height: 300px;
   max-width: 100%;
   overflow: hidden;
+  /* border: 5px solid var(--primary-color); */
 }
+
 .profile-pic {
   width: 85%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-.title {
-  font-size: 2.5rem;
-}
-.icon {
-  cursor: pointer;
-  height: 2rem;
-  transition: transform 0.2s;
-}
-.icon:hover {
-  transform: scale(1.1);
-}
-.btn {
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-/* Add some padding to the body to prevent content overlap with the fixed navbar */
-body {
-  padding-top: 4rem;
-}
 
-/* Styling for the navbar links */
-.nav-link {
-  font-size: 1rem;
-  font-weight: 500;
+.title {
+  color: var(--primary-color);
+  font-size: 2.5rem;
 }
 
 .typewriter {
   display: inline-block;
-  border-right: 2px solid #333;
+  border-right: 2px solid var(--text-color);
   padding-right: 5px;
   animation: blinkCursor 0.8s infinite;
 }
 
 @keyframes blinkCursor {
   0%, 100% {
-    border-color: #333;
+    border-color: var(--text-color);
   }
   50% {
     border-color: transparent;
   }
 }
 
+.btn-container .btn {
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
 
-/* Responsive adjustments for smaller screens */
+.btn-outline-dark {
+  border-color: var(--text-color);
+  color: var(--text-color);
+}
+
+.btn-outline-dark:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.btn-dark {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+}
+
+.btn-dark:hover {
+  background-color: var(--text-color);
+}
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+  transition: transform 0.2s, filter 0.3s;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+/* Responsive adjustments */
 @media (max-width: 576px) {
   .navbar-brand {
     font-size: 1.2rem;
