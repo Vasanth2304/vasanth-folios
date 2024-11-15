@@ -75,3 +75,124 @@
   color: var(--text-color)!important;
 } 
 
+
+:root {
+  --circle-bg: var(--accent-color);
+  --line-color: var(--primary-color);
+  --text-color: var(--text-color);
+  --bg-color: var(--background-color);
+}
+
+.timeline-section {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 20px 0;
+}
+
+.circle {
+  /* font-weight: bold; */
+  padding: 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  color: var(--background-color);
+  z-index: 2;
+}
+
+.box-icon-color {
+  color: var(--background-color);
+}
+/* .circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
+
+.how-it-works.row {
+  display: flex;
+}
+
+.how-it-works .col-2 {
+  display: inline-flex;
+  align-self: stretch;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.how-it-works .col-2::after {
+  content: '';
+  position: absolute;
+  border-left: 3px solid var(--primary-color);
+  z-index: 1;
+}
+
+.how-it-works .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+
+.how-it-works .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 2px);
+}
+
+.how-it-works .col-2.top::after {
+  height: 100%;
+  left: 50%;
+  top: 0;
+}
+
+.timeline div {
+  padding: 0;
+  height: 40px;
+}
+
+.timeline hr {
+  border-top: 3px solid var(--primary-color);
+  margin: 0;
+  top: 17px;
+  position: relative;
+  opacity: 1;
+}
+
+.timeline .corner {
+  width: 100%;
+  position: relative;
+}
+
+.top-right {
+  left: 50%;
+  top: -52%;
+  border-bottom: 3px solid var(--primary-color)!important;
+  border-left: 3px solid var(--primary-color)!important;
+  border-radius: 0px 0px 0px 20px;
+}
+
+.left-bottom {
+  left: -50%;
+  top: calc(50% - 3px);
+  border-top: 3px solid var(--primary-color)!important;
+  border-right: 3px solid var(--primary-color)!important;
+  border-radius: 0px 20px 0px 0px;
+}
+
+.top-left {
+  left: -50%;
+  top: -52%;
+  border-bottom: 3px solid var(--primary-color)!important;
+  border-right: 3px solid var(--primary-color)!important;
+  border-radius: 0px 0px 20px 0px;
+}
+
+.right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+  border-top: 3px solid var(--primary-color)!important;
+  border-left: 3px solid var(--primary-color)!important;
+  border-radius: 20px 0px 0px 0px;
+}
+

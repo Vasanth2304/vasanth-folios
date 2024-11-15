@@ -24,9 +24,9 @@ export class HomeComponent {
   phraseIndex: number = 0;
   charIndex: number = 0;
   isDeleting: boolean = false;
-  typingSpeed: number = 150;
-  deletingSpeed: number = 100;
-  pauseDuration: number = 2000;
+  typingSpeed: number = 100;
+  deletingSpeed: number = 50;
+  pauseDuration: number = 1000;
 
   constructor(private renderer: Renderer2) {}
   
@@ -65,7 +65,7 @@ export class HomeComponent {
     const sections = document.querySelectorAll('div[id]');
     const options = {
       root: null, // viewport
-      threshold: 0.5 // at least 50% of the section should be visible
+      threshold: 0.3 // at least 50% of the section should be visible
     };
 
     const observer = new IntersectionObserver((entries) => {
@@ -81,9 +81,20 @@ export class HomeComponent {
   }
 
   private highlightSection(target: Element): void {
-    // Add a highlight or active class to the section, or use any other way to show active sections.
-    console.log(target);
+    const navLinks = document.querySelectorAll('.nav-link');
+  
+    // Remove 'active' class from all links
+    navLinks.forEach(link => link.classList.remove('active'));
+  
+    // Find the corresponding link using the section's ID
+    const activeLink = document.querySelector(`.nav-link[href="#${target.id}"]`);
+  
+    // Add 'active' class to the current link
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
   }
+  
 
   private onScroll(): void {
     const scrollY = window.scrollY;

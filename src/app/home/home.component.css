@@ -3,12 +3,6 @@
   background-color: var(--background-color);
   color: var(--text-color);
 }
-/* #home {
-  background: url('./assets/background.jpg') no-repeat center center/cover;
-  height: 100vh;
-  color: #fff;
-  position: relative;
-} */
 
 .navbar {
   background-color: var(--primary-color);
@@ -16,14 +10,16 @@
 }
 
 .navbar-brand {
-  color: var(--background-color);
+  color: var(--text-color)!important;
 }
 
 .nav-link {
-  color: var(--background-color);
+  color: var(--text-color);
   transition: color 0.3s;
 }
-
+.navbar-nav .nav-link.active {
+  color: var(--background-color)!important;
+}
 .nav-link:hover {
   color: var(--background-color);
 }
@@ -36,26 +32,7 @@
   filter: invert(100%);
 }
 
-/* .navbar {
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-}
-
-.navbar-brand {
-  color: var(--text-color);
-}
-
-.nav-link {
-  color: var(--text-color);
-  transition: color 0.3s;
-}
-
-.nav-link:hover {
-  color: var(--primary-color);
-} */
-
 .center-wrapper {
-  /* background-color: var(--background-color); */
   min-height: 100vh;
   padding: 1rem;
 }
@@ -65,7 +42,6 @@
   height: 300px;
   max-width: 100%;
   overflow: hidden;
-  /* border: 5px solid var(--primary-color); */
 }
 
 .profile-pic {
