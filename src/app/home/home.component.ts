@@ -29,6 +29,7 @@ export class HomeComponent {
   deletingSpeed: number = 50;
   pauseDuration: number = 1000;
   backgroundImage = `linear-gradient(#53565c61, #53565c61),url('assets/bg-img.jpg')`;
+  maskImage = `url('assets/ink-overlay.gif')`
 
 
 
