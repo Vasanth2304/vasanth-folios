@@ -4,11 +4,12 @@ import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { ContactComponent } from "../contact/contact.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIconModule, AboutComponent, ExperienceComponent, ProjectsComponent, ContactComponent],
+  imports: [MatIconModule, AboutComponent, ExperienceComponent, ContactComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -27,6 +28,13 @@ export class HomeComponent {
   typingSpeed: number = 100;
   deletingSpeed: number = 50;
   pauseDuration: number = 1000;
+  backgroundImage = `linear-gradient(#53565c61, #53565c61),url('assets/bg-img.jpg')`;
+
+
+
+  images: string[] = [];
+  currentImageIndex: number = 0;
+  currentImageUrl: string = '';
 
   constructor(private renderer: Renderer2) {}
   
@@ -47,6 +55,14 @@ export class HomeComponent {
         }
       });
     });
+
+    // Initialize the images array with paths
+    this.images = Array.from({ length: 22 }, (_, i) => `./assets/bg-img/${i + 1}.jpg`);
+    this.currentImageUrl = this.images[this.currentImageIndex];
+    
+    // Start the image slideshow
+    this.startImageSlideshow();
+    
   }
 
   openResume() {
@@ -144,6 +160,20 @@ export class HomeComponent {
     // Recursively call typeEffect with a delay
     const delay = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
     setTimeout(() => this.typeEffect(), delay);
+  }
+  
+  scrollToSection(sectionId: string): void {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  startImageSlideshow(): void {
+    setInterval(() => {
+      this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
+      this.currentImageUrl = this.images[this.currentImageIndex];
+    }, 10000); // Change image every 10 seconds
   }
   
 }

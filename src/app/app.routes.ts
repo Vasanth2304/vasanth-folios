@@ -7,7 +7,8 @@ import { ProjectsComponent } from './projects/projects.component';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
-    { path: '**', redirectTo: '' } // Redirect any unknown paths to Home
+    { path: '**', redirectTo: '' }, // Redirect any unknown paths to Home
+    { path: 'contact', component: ContactComponent }, 
   ];
 
 // export const routes: Routes = [

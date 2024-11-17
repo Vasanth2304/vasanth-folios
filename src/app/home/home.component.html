@@ -14,7 +14,10 @@
       >
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <div
+        class="collapse navbar-collapse justify-content-end"
+        id="navbarNavDropdown"
+      >
         <ul class="navbar-nav">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#home">Home</a>
@@ -32,73 +35,88 @@
       </div>
     </div>
   </nav>
-  
 
   <!-- Home Section -->
-  <div class="center-wrapper d-flex align-items-center justify-content-center">
-    <section
-      id="profile"
-      class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-center gap-5 text-center"
+  <div
+    id="profile-wrapper"
+    [ngStyle]="{
+      'background-image': backgroundImage,
+      'background-size': 'cover',
+      'background-position': 'center',
+      'background-repeat': 'no-repeat'
+    }">
+    <div
+      class="center-wrapper d-flex align-items-center justify-content-center"
     >
-      <!-- Profile Picture -->
-      <div
-        class="section__pic-container d-flex align-items-center justify-content-center"
+      <section
+        id="profile"
+        class="container-fluid d-flex flex-column flex-md-row align-items-center justify-content-center gap-5 text-center"
       >
-        <img
-          src="./assets/3d-Profile.png"
-          alt="Vasanth profile picture"
-          class="img-fluid rounded-circle profile-pic"
-        />
-      </div>
-
-      <!-- Profile Text -->
-      <div class="section__text">
-        <p class="fw-bold mb-2">Hello, I'm</p>
-        <h1 class="title">Vasanth Ganesan</h1>
-        <p class="section__text__p2">
-          <span class="typewriter">{{ displayedText  }}</span>
-        </p>        
-        <!-- <p class="section__text__p2">Frontend Developer</p> -->
-
-        <!-- Buttons -->
-        <div class="btn-container d-flex justify-content-center gap-2 my-3 flex-wrap">
-          <button class="btn btn-outline-dark" (click)="openResume()">
-            Download CV
-          </button>
-          <button class="btn btn-dark" routerLink="/contact">
-            Contact Info
-          </button>
+        <!-- Profile Picture -->
+        <div
+          class="section__pic-container d-flex align-items-center justify-content-center"
+        >
+          <img
+            src="./assets/3d-Profile.png"
+            alt="Vasanth profile picture"
+            class="img-fluid rounded-circle profile-pic"
+          />
         </div>
 
-        <!-- Social Icons -->
-        <div class="socials-container d-flex justify-content-center gap-2 flex-wrap"> 
-          <img
-            src="./assets/icons/github-logo.png"
-            alt="My Github profile"
-            class="icon"
-            (click)="goToLink('https://github.com/Vasanth2304')"
-          />
-          <img
-            src="./assets/icons/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            (click)="goToLink('https://www.linkedin.com/in/vasanth-g-370517222/')"
-          />
-          <img
-          src="./assets/icons/instagram.png"
-          alt="My Instagram profile"
-          class="icon"
-          (click)="goToLink('https://www.instagram.com/vasanthvolley_/')"
-        />
-        <img
-          src="./assets/icons/twitter.png"
-          alt="My Twitter profile"
-          class="icon"
-          (click)="goToLink('https://twitter.com')"
-        />
+        <!-- Profile Text -->
+        <div class="section__text">
+          <p class="fw-bold mb-2">Hello, I'm</p>
+          <h1 class="title">Vasanth Ganesan</h1>
+          <p class="section__text__p2">
+            <span class="typewriter">{{ displayedText }}</span>
+          </p>
+
+          <!-- Buttons -->
+          <div
+            class="btn-container d-flex justify-content-center gap-2 my-3 flex-wrap"
+          >
+            <button class="btn btn-outline-dark" (click)="openResume()">
+              Download CV
+            </button>
+            <button class="btn btn-dark" (click)="scrollToSection('contact')">
+              Contact Info
+            </button>
+          </div>
+
+          <!-- Social Icons -->
+          <div
+            class="socials-container d-flex justify-content-center gap-2 flex-wrap"
+          >
+            <img
+              src="./assets/icons/github-50.png"
+              alt="My Github profile"
+              class="icon"
+              (click)="goToLink('https://github.com/Vasanth2304')"
+            />
+            <img
+              src="./assets/icons/linkedin.png"
+              alt="My LinkedIn profile"
+              class="icon"
+              (click)="
+                goToLink('https://www.linkedin.com/in/vasanth-g-370517222/')
+              "
+            />
+            <img
+              src="./assets/icons/instagram.png"
+              alt="My Instagram profile"
+              class="icon"
+              (click)="goToLink('https://www.instagram.com/vasanthvolley_/')"
+            />
+            <img
+              src="./assets/icons/twitterx-50.png"
+              alt="My Twitter profile"
+              class="icon"
+              (click)="goToLink('https://x.com/Vasanth_2304')"
+            />
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
   </div>
 </div>
 
@@ -112,10 +130,9 @@
   <!-- Content for experience -->
 </div>
 
-<div id="projects">
+<!-- <div id="projects">
   <app-projects></app-projects>
-  <!-- Content for projects -->
-</div>
+</div> -->
 
 <div id="contact">
   <app-contact></app-contact>
