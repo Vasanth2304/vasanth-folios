@@ -170,16 +170,16 @@
     <div class="d-flex flex-wrap justify-content-center gap-4">
       <div
         *ngFor="let skill of skills"
-        class="card text-center p-3"
+        class="card text-center p-1"
         style="width: 12rem"
       >
-        <img
+        <div class="card-body">
+          <img
           [src]="skill.icon"
           [alt]="skill.name + ' icon'"
           class="card-img-top mb-3 mx-auto"
           style="width: 100px; height: 100px"
         />
-        <div class="card-body">
           <h5 class="card-title">{{ skill.name }}</h5>
           <p class="card-text">{{ skill.description }}</p>
         </div>

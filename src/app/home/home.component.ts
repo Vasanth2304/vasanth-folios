@@ -1,4 +1,4 @@
-import { Component, Renderer2 } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, Renderer2 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
@@ -11,7 +11,8 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [MatIconModule, AboutComponent, ExperienceComponent, ContactComponent, CommonModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeComponent {
 
@@ -176,5 +177,24 @@ export class HomeComponent {
       this.currentImageUrl = this.images[this.currentImageIndex];
     }, 10000); // Change image every 10 seconds
   }
+
+    // Scroll to the top of the page
+    scrollToTop(): void {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  
+    // Show or hide the button based on scroll position
+    @HostListener('window:scroll', [])
+   onWindowScroll(): void {
+     const scrollBtn = document.getElementById('scrollToTopBtn');
+     if (scrollBtn) {
+      if (window.scrollY > 300) {
+       scrollBtn.style.display = 'flex';
+      } else {
+       scrollBtn.style.display = 'none';
+       }
+     }
+    }
+
   
 }

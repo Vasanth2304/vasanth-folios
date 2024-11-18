@@ -145,5 +145,42 @@
       opacity: 0;
     }
   }
+
+  /* Scroll to Top Button Styles */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.scroll-top-btn.show {
+  display: flex;
+  opacity: 1;
+}
+
+.scroll-top-btn.hide {
+  opacity: 0;
+}
+
+  /* .scroll-top-btn {
+    bottom: 20px; 
+    right: 20px; 
+    width: 40px; 
+    height: 40px; 
+    display: none;
+    z-index: 1000;
+    cursor: pointer;
+    transition: opacity 0.3s;
+  } */
   
 }
