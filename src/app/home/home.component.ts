@@ -42,6 +42,8 @@ export class HomeComponent {
   
   ngOnInit(): void {
     this.typeEffect();
+    this.calcScrollValue();
+    window.onscroll = () => this.calcScrollValue();
     window.addEventListener('scroll', this.onScroll.bind(this));
     const navLinks = document.querySelectorAll('.nav-link');
     const navbarCollapse = document.getElementById('navbarNavDropdown');
@@ -77,6 +79,27 @@ export class HomeComponent {
 
   ngAfterViewInit(): void {
     this.observeSections();
+  }
+  
+  calcScrollValue() {
+    const scrollProgress = document.getElementById('progress');
+    const progressValue = document.getElementById('progress-value');
+    const pos = document.documentElement.scrollTop;
+    const calcHeight =
+      document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollValue = Math.round((pos * 100) / calcHeight);
+
+    if (pos > 100) {
+      scrollProgress!.style.display = 'grid';
+    } else {
+      scrollProgress!.style.display = 'none';
+    }
+
+    scrollProgress!.addEventListener('click', () => {
+      document.documentElement.scrollTop = 0;
+    });
+
+    scrollProgress!.style.background = `conic-gradient(#00AAB3 ${scrollValue}%, #393E46 ${scrollValue}%)`;
   }
 
   private observeSections(): void {
@@ -176,25 +199,5 @@ export class HomeComponent {
       this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
       this.currentImageUrl = this.images[this.currentImageIndex];
     }, 10000); // Change image every 10 seconds
-  }
-
-    // Scroll to the top of the page
-    scrollToTop(): void {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  
-    // Show or hide the button based on scroll position
-    @HostListener('window:scroll', [])
-   onWindowScroll(): void {
-     const scrollBtn = document.getElementById('scrollToTopBtn');
-     if (scrollBtn) {
-      if (window.scrollY > 300) {
-       scrollBtn.style.display = 'flex';
-      } else {
-       scrollBtn.style.display = 'none';
-       }
-     }
-    }
-
-  
+  }  
 }
