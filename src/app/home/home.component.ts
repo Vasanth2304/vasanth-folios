@@ -1,27 +1,24 @@
-import { Component, CUSTOM_ELEMENTS_SCHEMA, HostListener, Renderer2 } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, Renderer2 } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import { AboutComponent } from '../about/about.component';
 import { ExperienceComponent } from '../experience/experience.component';
-import { ProjectsComponent } from '../projects/projects.component';
 import { ContactComponent } from "../contact/contact.component";
 import { CommonModule } from '@angular/common';
+import { ProjectsComponent } from '../projects/projects.component';
+
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [MatIconModule, AboutComponent, ExperienceComponent, ContactComponent, CommonModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
+  imports: [MatIconModule, AboutComponent, ExperienceComponent, ProjectsComponent, ContactComponent, CommonModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeComponent {
 
-  private lastScrollY: number = 0; // Declare lastScrollY to track the last scroll position
-  phrases: string[] = [
-    'Web Application Developer',
-    'Frontend Developer',
-    'Angular Developer',
-  ];
+  private lastScrollY: number = 0; 
+  phrases = ['Web Application Developer', 'Frontend Developer', 'Angular Developer'];
   displayedText: string = '';
   phraseIndex: number = 0;
   charIndex: number = 0;
@@ -41,8 +38,9 @@ export class HomeComponent {
   constructor(private renderer: Renderer2) {}
   
   ngOnInit(): void {
-    this.typeEffect();
+    this.initTypeEffect();
     this.calcScrollValue();
+
     window.onscroll = () => this.calcScrollValue();
     window.addEventListener('scroll', this.onScroll.bind(this));
     const navLinks = document.querySelectorAll('.nav-link');
@@ -59,14 +57,32 @@ export class HomeComponent {
         }
       });
     });
+    
+  }
+  
+  ngAfterViewInit(): void {
+    this.observeSections();
+  }
+  
 
-    // Initialize the images array with paths
-    this.images = Array.from({ length: 22 }, (_, i) => `./assets/bg-img/${i + 1}.jpg`);
-    this.currentImageUrl = this.images[this.currentImageIndex];
-    
-    // Start the image slideshow
-    this.startImageSlideshow();
-    
+  private initTypeEffect(): void {
+    const typeEffect = () => {
+      const currentPhrase = this.phrases[this.phraseIndex];
+      this.displayedText = this.isDeleting
+        ? currentPhrase.slice(0, --this.charIndex)
+        : currentPhrase.slice(0, ++this.charIndex);
+
+      if (!this.isDeleting && this.charIndex === currentPhrase.length) {
+        setTimeout(() => (this.isDeleting = true), 1000);
+      } else if (this.isDeleting && this.charIndex === 0) {
+        this.isDeleting = false;
+        this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
+      }
+
+      setTimeout(typeEffect, this.isDeleting ? 50 : 100);
+    };
+
+    typeEffect();
   }
 
   openResume() {
@@ -77,10 +93,6 @@ export class HomeComponent {
     window.location.href = url;
   }
 
-  ngAfterViewInit(): void {
-    this.observeSections();
-  }
-  
   calcScrollValue() {
     const scrollProgress = document.getElementById('progress');
     const progressValue = document.getElementById('progress-value');
@@ -154,37 +166,9 @@ export class HomeComponent {
   }
   
   private navigateToNextSection(sections: NodeListOf<Element>): void {
-    // Logic to move to the next section
   }
   
   private navigateToPreviousSection(sections: NodeListOf<Element>): void {
-    // Logic to move to the previous section
-  }
-
-  typeEffect(): void {
-    const currentPhrase = this.phrases[this.phraseIndex];
-
-    // Update displayed text based on typing or deleting state
-    this.displayedText = this.isDeleting
-      ? currentPhrase.slice(0, this.charIndex--)
-      : currentPhrase.slice(0, this.charIndex++);
-
-    // Check if we finished typing the current phrase
-    if (!this.isDeleting && this.charIndex === currentPhrase.length) {
-      // Start deleting after a pause
-      setTimeout(() => (this.isDeleting = true), this.pauseDuration);
-    }
-
-    // Check if we finished deleting the current phrase
-    if (this.isDeleting && this.charIndex === 0) {
-      // Move to the next phrase and reset
-      this.isDeleting = false;
-      this.phraseIndex = (this.phraseIndex + 1) % this.phrases.length;
-    }
-
-    // Recursively call typeEffect with a delay
-    const delay = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
-    setTimeout(() => this.typeEffect(), delay);
   }
   
   scrollToSection(sectionId: string): void {
@@ -193,11 +177,4 @@ export class HomeComponent {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
-
-  startImageSlideshow(): void {
-    setInterval(() => {
-      this.currentImageIndex = (this.currentImageIndex + 1) % this.images.length;
-      this.currentImageUrl = this.images[this.currentImageIndex];
-    }, 10000); // Change image every 10 seconds
-  }  
 }

@@ -49,10 +49,20 @@ export class ExperienceComponent {
       description: 'UI components for advanced interfaces.',
       icon: './assets/icons/kendo-ui.png' 
     },
+    // { 
+    //   name: 'Angular Material', 
+    //   description: 'Material Design components for Angular.',
+    //   icon: './assets/icons/angular-material.png' 
+    // },
     { 
-      name: 'Angular Material', 
-      description: 'Material Design components for Angular.',
-      icon: './assets/icons/angular-material.png' 
+      name: 'UI & UX', 
+      description: 'Designing visually appealing interfaces.', 
+      icon: './assets/icons/ui-ux.png' 
+    },
+    { 
+      name: 'Flutter', 
+      description: 'Cross-platform app development framework.', 
+      icon: './assets/icons/flutter.png' 
     }
   ];
 
@@ -86,6 +96,16 @@ export class ExperienceComponent {
       name: 'Visual Studio', 
       description: 'Integrated development environment by Microsoft.',
       icon: './assets/icons/visual-studio.png' 
+    },
+    { 
+      name: 'Figma', 
+      description: 'Collaborative interface design tool.', 
+      icon: './assets/icons/figma.png' 
+    },
+    { 
+      name: 'Android Studio', 
+      description: 'IDE for Android app development.', 
+      icon: './assets/icons/android-studio.png' 
     }
   ];
 }
