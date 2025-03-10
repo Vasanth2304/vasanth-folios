@@ -81,7 +81,7 @@ jobs:
       #   with:
       #     path: ./out
             # ** Restore Cache **
-            
+
       - name: Restore cache
         uses: actions/cache@v4
         with:
@@ -98,8 +98,8 @@ jobs:
       - name: Build with Next.js
         run: npm run build
 
-      - name: Export static files
-        run: npm run export
+      # - name: Export static files
+      #   run: npm run export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
